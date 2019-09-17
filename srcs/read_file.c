@@ -1,9 +1,9 @@
 #include "fdf.h"
 
-unsigned	ft_len_str(char *str)
+int	ft_len_str(const char *str)
 {
 	unsigned	i;
-	unsigned	j;
+	int			j;
 
 	i = 0;
 	j = 0;
@@ -16,71 +16,80 @@ unsigned	ft_len_str(char *str)
 	return (j + 1);
 }
 
-int one_coord(const char *str, unsigned *i)
+int base_connect(char c, unsigned base)
 {
-	unsigned	j;
-	int			f;
-	int			h;
-
-	j = *i;
-	f = 1;
-	h = 0;
-	if (str[j] && str[j] == '-')
-	{
-		++j;
-		f = -1;
-	}
-	while (str[j] && str[j] >= '0' && str[j] <= '9')
-	{
-		h = h * 10 + str[j] - '0';
-		++j;
-	}
-	h *= f;
-	if (j - *i > 14 || h > 2147483647 || h < -2147483648
-	|| (f == -1 && j - *i == 1))
-	{
-		ft_printf("not valid height");
-		exit(1);
-	}
-	*i = j;
-	return (h);
+	if (base <= 10)
+		return (c >= '0' && c <= '9');
+	return ((c >= '0' && c <= '9') || (c >= 'A' && c <= ('A' + base - 10)) || \
+	(c >= 'a' && c <= ('a' + base - 10)));
 }
 
-int one_color(char *str, unsigned *i)
+int mini_atoi_base(char **str, unsigned base)
 {
-	unsigned j;
-	int 	t;
+	long		nbr;
+	int			f;
+	unsigned	k;
 
-	j = *i;
-	if (str[j] == ' ')
+	f = 1;
+	nbr = 0;
+	k = 0;
+	if (**str == '-')
 	{
-		++*i;
-		return (0xffffff);
+		++*str;
+		f = -1;
 	}
-	if ((t = ft_strncmp(str, ",0x", 3)))
+	while (**str && base_connect(**str, base))
 	{
-		ft_printf("not valid parameter");
+		if ((**str >= 'A' && **str <= 'F') || (**str >= 'a' && **str <= 'f'))
+			nbr = (nbr * base) + (**str - 'A' + 10);
+		else
+			nbr = (nbr * base) + (**str - '0');
+		++*str;
+		++k;
+	}
+	nbr *= f;
+	if ((f == -1 && k == 0) || k > 14 || nbr > 2147483647 || nbr < -2147483648)
+	{
+		ft_printf("Incorrect color or h");
 		exit(1);
 	}
-
-
+	return ((int)nbr);
 }
 
 t_draw	*one_str(char *str)
 {
-	unsigned 	i;
 	t_draw		*drow;
 	unsigned 	j;
+	char 		*copy;
+	int len;
+	int p;
 
-	i = 0;
 	j = 0;
-	if (!(drow = ft_memalloc(sizeof(drow) * ft_len_str(str))))
+	copy = str;
+	len = ft_len_str(str);
+	if (!(drow = (t_draw *)ft_memalloc(sizeof(t_draw) * len)))
 		exit(1);
-	while (str[i])
+	p = (height - 200) / len;
+	while (*copy)
 	{
-		drow[j].h = one_coord(str, &i);
-
+		drow[j].h = mini_atoi_base(&copy, 10);
+		drow[j].h *= p;
+		if (!(ft_strncmp(copy, ",0x", 3)))
+		{
+			copy += 3;
+			drow[j].color = mini_atoi_base(&copy, 16);
+		}
+		if (*copy == ' ')
+		{
+			drow[j].color = drow[j].color ? drow[j].color : 0x00FFFF;
+			while (*copy && *copy == ' ')
+				++copy;
+		}
+		++j;
 	}
+	free(str);
+	str = NULL;
+	return (drow);
 }
 
 t_draw	**fill_matrix(char **map)
@@ -93,13 +102,18 @@ t_draw	**fill_matrix(char **map)
 	i = 0;
 	while (map[len])
 		++len;
-	if (!(drow = ft_memalloc(sizeof(t_draw *) * (len + 1))))
+	if (!(drow = (t_draw **)ft_memalloc(sizeof(t_draw *) * (len + 1))))
 		exit(1);
 	drow[len] = NULL;
-	while (i < len)
+	while (map[i])
 	{
-		drow[i] =
+		drow[i] = one_str(map[i]);
+		++i;
 	}
+	drow[i] = NULL;
+	free(map);
+	map = NULL;
+	return (drow);
 
 }
 
@@ -111,7 +125,7 @@ void	read_file(int fd, t_fdf *fdf)
 	char **map;
 
 	file = ft_strnew(0);
-	while (!(o = read(fd, buf, 9999)))
+	while ((o = read(fd, buf, 9999)))
 	{
 		buf[o] = '\0';
 		file = ft_strjoin_free(file, buf, 1);
@@ -121,6 +135,7 @@ void	read_file(int fd, t_fdf *fdf)
 		ft_printf("empty file\n");
 		exit(1);
 	}
+	fdf->draw = fill_matrix(map);
 
 }
 

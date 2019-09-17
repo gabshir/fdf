@@ -2715,6 +2715,33 @@ srcs/draw.c.s:
 	$(MAKE) -f CMakeFiles/fdf.dir/build.make CMakeFiles/fdf.dir/srcs/draw.c.s
 .PHONY : srcs/draw.c.s
 
+srcs/main.o: srcs/main.c.o
+
+.PHONY : srcs/main.o
+
+# target to build an object file
+srcs/main.c.o:
+	$(MAKE) -f CMakeFiles/fdf.dir/build.make CMakeFiles/fdf.dir/srcs/main.c.o
+.PHONY : srcs/main.c.o
+
+srcs/main.i: srcs/main.c.i
+
+.PHONY : srcs/main.i
+
+# target to preprocess a source file
+srcs/main.c.i:
+	$(MAKE) -f CMakeFiles/fdf.dir/build.make CMakeFiles/fdf.dir/srcs/main.c.i
+.PHONY : srcs/main.c.i
+
+srcs/main.s: srcs/main.c.s
+
+.PHONY : srcs/main.s
+
+# target to generate assembly for a file
+srcs/main.c.s:
+	$(MAKE) -f CMakeFiles/fdf.dir/build.make CMakeFiles/fdf.dir/srcs/main.c.s
+.PHONY : srcs/main.c.s
+
 srcs/read_file.o: srcs/read_file.c.o
 
 .PHONY : srcs/read_file.o
@@ -3039,6 +3066,9 @@ help:
 	@echo "... srcs/draw.o"
 	@echo "... srcs/draw.i"
 	@echo "... srcs/draw.s"
+	@echo "... srcs/main.o"
+	@echo "... srcs/main.i"
+	@echo "... srcs/main.s"
 	@echo "... srcs/read_file.o"
 	@echo "... srcs/read_file.i"
 	@echo "... srcs/read_file.s"

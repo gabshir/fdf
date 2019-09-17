@@ -310,6 +310,12 @@ CMakeFiles/fdf.dir/srcs/draw.c.o: ../libft/includes/libft.h
 CMakeFiles/fdf.dir/srcs/draw.c.o: ../srcs/draw.c
 CMakeFiles/fdf.dir/srcs/draw.c.o: /usr/local/include/mlx.h
 
+CMakeFiles/fdf.dir/srcs/main.c.o: ../includes/fdf.h
+CMakeFiles/fdf.dir/srcs/main.c.o: ../libft/includes/ft_printf.h
+CMakeFiles/fdf.dir/srcs/main.c.o: ../libft/includes/libft.h
+CMakeFiles/fdf.dir/srcs/main.c.o: ../srcs/main.c
+CMakeFiles/fdf.dir/srcs/main.c.o: /usr/local/include/mlx.h
+
 CMakeFiles/fdf.dir/srcs/read_file.c.o: ../includes/fdf.h
 CMakeFiles/fdf.dir/srcs/read_file.c.o: ../libft/includes/ft_printf.h
 CMakeFiles/fdf.dir/srcs/read_file.c.o: ../libft/includes/libft.h

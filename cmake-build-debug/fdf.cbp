@@ -389,6 +389,9 @@
 		<Unit filename="/Users/gabshire/Desktop/fdf/srcs/draw.c">
 			<Option target="fdf"/>
 		</Unit>
+		<Unit filename="/Users/gabshire/Desktop/fdf/srcs/main.c">
+			<Option target="fdf"/>
+		</Unit>
 		<Unit filename="/Users/gabshire/Desktop/fdf/srcs/read_file.c">
 			<Option target="fdf"/>
 		</Unit>

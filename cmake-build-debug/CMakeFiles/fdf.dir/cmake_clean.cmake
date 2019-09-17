@@ -95,6 +95,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/fdf.dir/libft/srcs/ft_str/ft_uitoa_base.c.o"
   "CMakeFiles/fdf.dir/libft/srcs/ft_str/get_next_line.c.o"
   "CMakeFiles/fdf.dir/srcs/draw.c.o"
+  "CMakeFiles/fdf.dir/srcs/main.c.o"
   "CMakeFiles/fdf.dir/srcs/read_file.c.o"
   "fdf.pdb"
   "fdf"
