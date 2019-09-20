@@ -99,7 +99,9 @@ set(CMAKE_DEPENDS_CHECK_C
   "/Users/gabshire/Desktop/fdf/libft/srcs/ft_str/ft_toupper.c" "/Users/gabshire/Desktop/fdf/cmake-build-debug/CMakeFiles/fdf.dir/libft/srcs/ft_str/ft_toupper.c.o"
   "/Users/gabshire/Desktop/fdf/libft/srcs/ft_str/ft_uitoa_base.c" "/Users/gabshire/Desktop/fdf/cmake-build-debug/CMakeFiles/fdf.dir/libft/srcs/ft_str/ft_uitoa_base.c.o"
   "/Users/gabshire/Desktop/fdf/libft/srcs/ft_str/get_next_line.c" "/Users/gabshire/Desktop/fdf/cmake-build-debug/CMakeFiles/fdf.dir/libft/srcs/ft_str/get_next_line.c.o"
+  "/Users/gabshire/Desktop/fdf/srcs/camera.c" "/Users/gabshire/Desktop/fdf/cmake-build-debug/CMakeFiles/fdf.dir/srcs/camera.c.o"
   "/Users/gabshire/Desktop/fdf/srcs/draw.c" "/Users/gabshire/Desktop/fdf/cmake-build-debug/CMakeFiles/fdf.dir/srcs/draw.c.o"
+  "/Users/gabshire/Desktop/fdf/srcs/hook.c" "/Users/gabshire/Desktop/fdf/cmake-build-debug/CMakeFiles/fdf.dir/srcs/hook.c.o"
   "/Users/gabshire/Desktop/fdf/srcs/main.c" "/Users/gabshire/Desktop/fdf/cmake-build-debug/CMakeFiles/fdf.dir/srcs/main.c.o"
   "/Users/gabshire/Desktop/fdf/srcs/read_file.c" "/Users/gabshire/Desktop/fdf/cmake-build-debug/CMakeFiles/fdf.dir/srcs/read_file.c.o"
   )

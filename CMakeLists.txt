@@ -18,7 +18,7 @@ add_executable(fdf
         ${HEADERS}
         ${HEADERS2}
         ${SOURCES2}
-        )
+        srcs/camera.c srcs/hook.c)
 target_link_libraries(fdf "-lmlx")
 target_link_libraries(fdf "-framework OpenGl")
 target_link_libraries(fdf "-framework Appkit")

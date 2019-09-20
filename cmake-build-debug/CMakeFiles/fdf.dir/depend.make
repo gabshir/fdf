@@ -304,11 +304,19 @@ CMakeFiles/fdf.dir/libft/srcs/ft_str/ft_uitoa_base.c.o: ../libft/srcs/ft_str/ft_
 CMakeFiles/fdf.dir/libft/srcs/ft_str/get_next_line.c.o: ../libft/includes/libft.h
 CMakeFiles/fdf.dir/libft/srcs/ft_str/get_next_line.c.o: ../libft/srcs/ft_str/get_next_line.c
 
+CMakeFiles/fdf.dir/srcs/camera.c.o: ../includes/fdf.h
+CMakeFiles/fdf.dir/srcs/camera.c.o: ../libft/includes/ft_printf.h
+CMakeFiles/fdf.dir/srcs/camera.c.o: ../libft/includes/libft.h
+CMakeFiles/fdf.dir/srcs/camera.c.o: ../srcs/camera.c
+CMakeFiles/fdf.dir/srcs/camera.c.o: /usr/local/include/mlx.h
+
 CMakeFiles/fdf.dir/srcs/draw.c.o: ../includes/fdf.h
 CMakeFiles/fdf.dir/srcs/draw.c.o: ../libft/includes/ft_printf.h
 CMakeFiles/fdf.dir/srcs/draw.c.o: ../libft/includes/libft.h
 CMakeFiles/fdf.dir/srcs/draw.c.o: ../srcs/draw.c
 CMakeFiles/fdf.dir/srcs/draw.c.o: /usr/local/include/mlx.h
+
+CMakeFiles/fdf.dir/srcs/hook.c.o: ../srcs/hook.c
 
 CMakeFiles/fdf.dir/srcs/main.c.o: ../includes/fdf.h
 CMakeFiles/fdf.dir/srcs/main.c.o: ../libft/includes/ft_printf.h

@@ -2688,6 +2688,33 @@ libft/srcs/ft_str/get_next_line.c.s:
 	$(MAKE) -f CMakeFiles/fdf.dir/build.make CMakeFiles/fdf.dir/libft/srcs/ft_str/get_next_line.c.s
 .PHONY : libft/srcs/ft_str/get_next_line.c.s
 
+srcs/camera.o: srcs/camera.c.o
+
+.PHONY : srcs/camera.o
+
+# target to build an object file
+srcs/camera.c.o:
+	$(MAKE) -f CMakeFiles/fdf.dir/build.make CMakeFiles/fdf.dir/srcs/camera.c.o
+.PHONY : srcs/camera.c.o
+
+srcs/camera.i: srcs/camera.c.i
+
+.PHONY : srcs/camera.i
+
+# target to preprocess a source file
+srcs/camera.c.i:
+	$(MAKE) -f CMakeFiles/fdf.dir/build.make CMakeFiles/fdf.dir/srcs/camera.c.i
+.PHONY : srcs/camera.c.i
+
+srcs/camera.s: srcs/camera.c.s
+
+.PHONY : srcs/camera.s
+
+# target to generate assembly for a file
+srcs/camera.c.s:
+	$(MAKE) -f CMakeFiles/fdf.dir/build.make CMakeFiles/fdf.dir/srcs/camera.c.s
+.PHONY : srcs/camera.c.s
+
 srcs/draw.o: srcs/draw.c.o
 
 .PHONY : srcs/draw.o
@@ -2714,6 +2741,33 @@ srcs/draw.s: srcs/draw.c.s
 srcs/draw.c.s:
 	$(MAKE) -f CMakeFiles/fdf.dir/build.make CMakeFiles/fdf.dir/srcs/draw.c.s
 .PHONY : srcs/draw.c.s
+
+srcs/hook.o: srcs/hook.c.o
+
+.PHONY : srcs/hook.o
+
+# target to build an object file
+srcs/hook.c.o:
+	$(MAKE) -f CMakeFiles/fdf.dir/build.make CMakeFiles/fdf.dir/srcs/hook.c.o
+.PHONY : srcs/hook.c.o
+
+srcs/hook.i: srcs/hook.c.i
+
+.PHONY : srcs/hook.i
+
+# target to preprocess a source file
+srcs/hook.c.i:
+	$(MAKE) -f CMakeFiles/fdf.dir/build.make CMakeFiles/fdf.dir/srcs/hook.c.i
+.PHONY : srcs/hook.c.i
+
+srcs/hook.s: srcs/hook.c.s
+
+.PHONY : srcs/hook.s
+
+# target to generate assembly for a file
+srcs/hook.c.s:
+	$(MAKE) -f CMakeFiles/fdf.dir/build.make CMakeFiles/fdf.dir/srcs/hook.c.s
+.PHONY : srcs/hook.c.s
 
 srcs/main.o: srcs/main.c.o
 
@@ -3063,9 +3117,15 @@ help:
 	@echo "... libft/srcs/ft_str/get_next_line.o"
 	@echo "... libft/srcs/ft_str/get_next_line.i"
 	@echo "... libft/srcs/ft_str/get_next_line.s"
+	@echo "... srcs/camera.o"
+	@echo "... srcs/camera.i"
+	@echo "... srcs/camera.s"
 	@echo "... srcs/draw.o"
 	@echo "... srcs/draw.i"
 	@echo "... srcs/draw.s"
+	@echo "... srcs/hook.o"
+	@echo "... srcs/hook.i"
+	@echo "... srcs/hook.s"
 	@echo "... srcs/main.o"
 	@echo "... srcs/main.i"
 	@echo "... srcs/main.s"

@@ -386,7 +386,13 @@
 		<Unit filename="/Users/gabshire/Desktop/fdf/libft/srcs/ft_str/get_next_line.c">
 			<Option target="fdf"/>
 		</Unit>
+		<Unit filename="/Users/gabshire/Desktop/fdf/srcs/camera.c">
+			<Option target="fdf"/>
+		</Unit>
 		<Unit filename="/Users/gabshire/Desktop/fdf/srcs/draw.c">
+			<Option target="fdf"/>
+		</Unit>
+		<Unit filename="/Users/gabshire/Desktop/fdf/srcs/hook.c">
 			<Option target="fdf"/>
 		</Unit>
 		<Unit filename="/Users/gabshire/Desktop/fdf/srcs/main.c">

@@ -1292,9 +1292,22 @@ CMakeFiles/fdf.dir/libft/srcs/ft_str/get_next_line.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/fdf.dir/libft/srcs/ft_str/get_next_line.c.s"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/gabshire/Desktop/fdf/libft/srcs/ft_str/get_next_line.c -o CMakeFiles/fdf.dir/libft/srcs/ft_str/get_next_line.c.s
 
+CMakeFiles/fdf.dir/srcs/camera.c.o: CMakeFiles/fdf.dir/flags.make
+CMakeFiles/fdf.dir/srcs/camera.c.o: ../srcs/camera.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/gabshire/Desktop/fdf/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_96) "Building C object CMakeFiles/fdf.dir/srcs/camera.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/fdf.dir/srcs/camera.c.o   -c /Users/gabshire/Desktop/fdf/srcs/camera.c
+
+CMakeFiles/fdf.dir/srcs/camera.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/fdf.dir/srcs/camera.c.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/gabshire/Desktop/fdf/srcs/camera.c > CMakeFiles/fdf.dir/srcs/camera.c.i
+
+CMakeFiles/fdf.dir/srcs/camera.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/fdf.dir/srcs/camera.c.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/gabshire/Desktop/fdf/srcs/camera.c -o CMakeFiles/fdf.dir/srcs/camera.c.s
+
 CMakeFiles/fdf.dir/srcs/draw.c.o: CMakeFiles/fdf.dir/flags.make
 CMakeFiles/fdf.dir/srcs/draw.c.o: ../srcs/draw.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/gabshire/Desktop/fdf/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_96) "Building C object CMakeFiles/fdf.dir/srcs/draw.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/gabshire/Desktop/fdf/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_97) "Building C object CMakeFiles/fdf.dir/srcs/draw.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/fdf.dir/srcs/draw.c.o   -c /Users/gabshire/Desktop/fdf/srcs/draw.c
 
 CMakeFiles/fdf.dir/srcs/draw.c.i: cmake_force
@@ -1305,9 +1318,22 @@ CMakeFiles/fdf.dir/srcs/draw.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/fdf.dir/srcs/draw.c.s"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/gabshire/Desktop/fdf/srcs/draw.c -o CMakeFiles/fdf.dir/srcs/draw.c.s
 
+CMakeFiles/fdf.dir/srcs/hook.c.o: CMakeFiles/fdf.dir/flags.make
+CMakeFiles/fdf.dir/srcs/hook.c.o: ../srcs/hook.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/gabshire/Desktop/fdf/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_98) "Building C object CMakeFiles/fdf.dir/srcs/hook.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/fdf.dir/srcs/hook.c.o   -c /Users/gabshire/Desktop/fdf/srcs/hook.c
+
+CMakeFiles/fdf.dir/srcs/hook.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/fdf.dir/srcs/hook.c.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/gabshire/Desktop/fdf/srcs/hook.c > CMakeFiles/fdf.dir/srcs/hook.c.i
+
+CMakeFiles/fdf.dir/srcs/hook.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/fdf.dir/srcs/hook.c.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/gabshire/Desktop/fdf/srcs/hook.c -o CMakeFiles/fdf.dir/srcs/hook.c.s
+
 CMakeFiles/fdf.dir/srcs/main.c.o: CMakeFiles/fdf.dir/flags.make
 CMakeFiles/fdf.dir/srcs/main.c.o: ../srcs/main.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/gabshire/Desktop/fdf/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_97) "Building C object CMakeFiles/fdf.dir/srcs/main.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/gabshire/Desktop/fdf/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_99) "Building C object CMakeFiles/fdf.dir/srcs/main.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/fdf.dir/srcs/main.c.o   -c /Users/gabshire/Desktop/fdf/srcs/main.c
 
 CMakeFiles/fdf.dir/srcs/main.c.i: cmake_force
@@ -1320,7 +1346,7 @@ CMakeFiles/fdf.dir/srcs/main.c.s: cmake_force
 
 CMakeFiles/fdf.dir/srcs/read_file.c.o: CMakeFiles/fdf.dir/flags.make
 CMakeFiles/fdf.dir/srcs/read_file.c.o: ../srcs/read_file.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/gabshire/Desktop/fdf/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_98) "Building C object CMakeFiles/fdf.dir/srcs/read_file.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/gabshire/Desktop/fdf/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_100) "Building C object CMakeFiles/fdf.dir/srcs/read_file.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/fdf.dir/srcs/read_file.c.o   -c /Users/gabshire/Desktop/fdf/srcs/read_file.c
 
 CMakeFiles/fdf.dir/srcs/read_file.c.i: cmake_force
@@ -1428,7 +1454,9 @@ fdf_OBJECTS = \
 "CMakeFiles/fdf.dir/libft/srcs/ft_str/ft_toupper.c.o" \
 "CMakeFiles/fdf.dir/libft/srcs/ft_str/ft_uitoa_base.c.o" \
 "CMakeFiles/fdf.dir/libft/srcs/ft_str/get_next_line.c.o" \
+"CMakeFiles/fdf.dir/srcs/camera.c.o" \
 "CMakeFiles/fdf.dir/srcs/draw.c.o" \
+"CMakeFiles/fdf.dir/srcs/hook.c.o" \
 "CMakeFiles/fdf.dir/srcs/main.c.o" \
 "CMakeFiles/fdf.dir/srcs/read_file.c.o"
 
@@ -1530,12 +1558,14 @@ fdf: CMakeFiles/fdf.dir/libft/srcs/ft_str/ft_tolower.c.o
 fdf: CMakeFiles/fdf.dir/libft/srcs/ft_str/ft_toupper.c.o
 fdf: CMakeFiles/fdf.dir/libft/srcs/ft_str/ft_uitoa_base.c.o
 fdf: CMakeFiles/fdf.dir/libft/srcs/ft_str/get_next_line.c.o
+fdf: CMakeFiles/fdf.dir/srcs/camera.c.o
 fdf: CMakeFiles/fdf.dir/srcs/draw.c.o
+fdf: CMakeFiles/fdf.dir/srcs/hook.c.o
 fdf: CMakeFiles/fdf.dir/srcs/main.c.o
 fdf: CMakeFiles/fdf.dir/srcs/read_file.c.o
 fdf: CMakeFiles/fdf.dir/build.make
 fdf: CMakeFiles/fdf.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/gabshire/Desktop/fdf/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_99) "Linking C executable fdf"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/gabshire/Desktop/fdf/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_101) "Linking C executable fdf"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/fdf.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

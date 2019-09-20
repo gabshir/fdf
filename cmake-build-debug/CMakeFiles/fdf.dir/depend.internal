@@ -304,12 +304,20 @@ CMakeFiles/fdf.dir/libft/srcs/ft_str/ft_uitoa_base.c.o
 CMakeFiles/fdf.dir/libft/srcs/ft_str/get_next_line.c.o
  ../libft/includes/libft.h
  /Users/gabshire/Desktop/fdf/libft/srcs/ft_str/get_next_line.c
+CMakeFiles/fdf.dir/srcs/camera.c.o
+ ../includes/fdf.h
+ ../libft/includes/ft_printf.h
+ ../libft/includes/libft.h
+ /Users/gabshire/Desktop/fdf/srcs/camera.c
+ /usr/local/include/mlx.h
 CMakeFiles/fdf.dir/srcs/draw.c.o
  ../includes/fdf.h
  ../libft/includes/ft_printf.h
  ../libft/includes/libft.h
  /Users/gabshire/Desktop/fdf/srcs/draw.c
  /usr/local/include/mlx.h
+CMakeFiles/fdf.dir/srcs/hook.c.o
+ /Users/gabshire/Desktop/fdf/srcs/hook.c
 CMakeFiles/fdf.dir/srcs/main.c.o
  ../includes/fdf.h
  ../libft/includes/ft_printf.h

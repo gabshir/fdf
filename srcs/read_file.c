@@ -33,6 +33,8 @@ int mini_atoi_base(char **str, unsigned base)
 	f = 1;
 	nbr = 0;
 	k = 0;
+	while (**str && **str == ' ')
+		++*str;
 	if (**str == '-')
 	{
 		++*str;
@@ -56,24 +58,21 @@ int mini_atoi_base(char **str, unsigned base)
 	return ((int)nbr);
 }
 
-t_draw	*one_str(char *str)
+t_draw	*one_str(char *str, t_fdf *fdf, int i)
 {
 	t_draw		*drow;
-	unsigned 	j;
+	int 		j;
 	char 		*copy;
-	int len;
-	int p;
 
 	j = 0;
 	copy = str;
-	len = ft_len_str(str);
-	if (!(drow = (t_draw *)ft_memalloc(sizeof(t_draw) * len)))
+	if (!(drow = (t_draw *)ft_memalloc(sizeof(t_draw) * ft_len_str(str))))
 		exit(1);
-	p = (height - 200) / len;
 	while (*copy)
 	{
+		drow[j].x = j + 1;
+		drow[j].y = i;
 		drow[j].h = mini_atoi_base(&copy, 10);
-		drow[j].h *= p;
 		if (!(ft_strncmp(copy, ",0x", 3)))
 		{
 			copy += 3;
@@ -92,7 +91,7 @@ t_draw	*one_str(char *str)
 	return (drow);
 }
 
-t_draw	**fill_matrix(char **map)
+t_draw	**fill_matrix(char **map, t_fdf *fdf)
 {
 	unsigned len;
 	unsigned i;
@@ -107,7 +106,7 @@ t_draw	**fill_matrix(char **map)
 	drow[len] = NULL;
 	while (map[i])
 	{
-		drow[i] = one_str(map[i]);
+		drow[i] = one_str(map[i], fdf, (int)i + 1);
 		++i;
 	}
 	drow[i] = NULL;
@@ -135,7 +134,7 @@ void	read_file(int fd, t_fdf *fdf)
 		ft_printf("empty file\n");
 		exit(1);
 	}
-	fdf->draw = fill_matrix(map);
+	fdf->draw = fill_matrix(map, fdf);
 
 }
 
