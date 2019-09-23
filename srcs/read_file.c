@@ -1,6 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   read_file.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: gabshire <gabshire@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/09/23 12:20:14 by gabshire          #+#    #+#             */
+/*   Updated: 2019/09/23 20:15:21 by gabshire         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "fdf.h"
 
-int	ft_len_str(const char *str)
+static int		ft_len_str(const char *str)
 {
 	unsigned	i;
 	int			j;
@@ -16,112 +28,78 @@ int	ft_len_str(const char *str)
 	return (j + 1);
 }
 
-int base_connect(char c, unsigned base)
+static void		index_str_and_st(t_draw *drow, int i, int j, char **copy)
 {
-	if (base <= 10)
-		return (c >= '0' && c <= '9');
-	return ((c >= '0' && c <= '9') || (c >= 'A' && c <= ('A' + base - 10)) || \
-	(c >= 'a' && c <= ('a' + base - 10)));
+	char *temp;
+
+	drow->x = j + 1;
+	drow->y = i;
+	temp = *copy;
+	drow->h = mini_atoi_base(copy, 10);
+	if ((**copy && **copy != ' ' && **copy != ',') || temp == *copy)
+		error("not correct argument");
 }
 
-int mini_atoi_base(char **str, unsigned base)
+static t_draw	*one_str(char *str, int i, t_fdf *fdf)
 {
-	long		nbr;
-	int			f;
-	unsigned	k;
-
-	f = 1;
-	nbr = 0;
-	k = 0;
-	while (**str && **str == ' ')
-		++*str;
-	if (**str == '-')
-	{
-		++*str;
-		f = -1;
-	}
-	while (**str && base_connect(**str, base))
-	{
-		if ((**str >= 'A' && **str <= 'F') || (**str >= 'a' && **str <= 'f'))
-			nbr = (nbr * base) + (**str - 'A' + 10);
-		else
-			nbr = (nbr * base) + (**str - '0');
-		++*str;
-		++k;
-	}
-	nbr *= f;
-	if ((f == -1 && k == 0) || k > 14 || nbr > 2147483647 || nbr < -2147483648)
-	{
-		ft_printf("Incorrect color or h");
-		exit(1);
-	}
-	return ((int)nbr);
-}
-
-t_draw	*one_str(char *str, t_fdf *fdf, int i)
-{
-	t_draw		*drow;
-	int 		j;
-	char 		*copy;
+	t_draw	*drow;
+	int		j;
+	char	*copy;
 
 	j = 0;
 	copy = str;
 	if (!(drow = (t_draw *)ft_memalloc(sizeof(t_draw) * ft_len_str(str))))
-		exit(1);
+		error("Error malloc");
 	while (*copy)
 	{
-		drow[j].x = j + 1;
-		drow[j].y = i;
-		drow[j].h = mini_atoi_base(&copy, 10);
+		index_str_and_st(&drow[j], i, j + 1, &copy);
 		if (!(ft_strncmp(copy, ",0x", 3)))
 		{
 			copy += 3;
 			drow[j].color = mini_atoi_base(&copy, 16);
 		}
-		if (*copy == ' ')
-		{
+		*copy && *copy == ',' ? error("not correct argument") : 0;
+		skip_spaces(&copy);
+		if (*copy)
 			drow[j].color = drow[j].color ? drow[j].color : 0x00FFFF;
-			while (*copy && *copy == ' ')
-				++copy;
-		}
 		++j;
 	}
-	free(str);
-	str = NULL;
+	fdf->len == j || fdf->len == 0 ? fdf->len = j : error("Incorrect len");
 	return (drow);
 }
 
-t_draw	**fill_matrix(char **map, t_fdf *fdf)
+static t_draw	**fill_matrix(char **map, t_fdf *fdf)
 {
-	unsigned len;
-	unsigned i;
-	t_draw	**drow;
+	unsigned	len;
+	unsigned	i;
+	t_draw		**drow;
 
 	len = 0;
 	i = 0;
 	while (map[len])
 		++len;
 	if (!(drow = (t_draw **)ft_memalloc(sizeof(t_draw *) * (len + 1))))
-		exit(1);
+		error("Error malloc");
 	drow[len] = NULL;
 	while (map[i])
 	{
-		drow[i] = one_str(map[i], fdf, (int)i + 1);
+		drow[i] = one_str(map[i], (int)i + 1, fdf);
+		free(map[i]);
+		map[i] = NULL;
 		++i;
 	}
 	drow[i] = NULL;
 	free(map);
 	map = NULL;
 	return (drow);
-
 }
 
-void	read_file(int fd, t_fdf *fdf)
+void			read_file(int fd, t_fdf *fdf)
 {
-	int o;
-	char buf[10000];
-	char *file;
-	char **map;
+	int		o;
+	char	buf[10000];
+	char	*file;
+	char	**map;
 
 	file = ft_strnew(0);
 	while ((o = read(fd, buf, 9999)))
@@ -130,11 +108,7 @@ void	read_file(int fd, t_fdf *fdf)
 		file = ft_strjoin_free(file, buf, 1);
 	}
 	if (!(map = ft_strsplit(file, '\n')))
-	{
-		ft_printf("empty file\n");
-		exit(1);
-	}
+		error("error malloc");
+	!map[0] ? error("empty file") : 0;
 	fdf->draw = fill_matrix(map, fdf);
-
 }
-

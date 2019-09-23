@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: gabshire <gabshire@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/09/23 12:20:30 by gabshire          #+#    #+#             */
+/*   Updated: 2019/09/23 20:15:21 by gabshire         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <fdf.h>
 
 void	inc_mlx(t_fdf *fdf)
@@ -5,38 +17,32 @@ void	inc_mlx(t_fdf *fdf)
 	int g;
 
 	g = 1;
-	fdf->mlx_ptr = mlx_init();
-	fdf->win_ptr = mlx_new_window(fdf->mlx_ptr, WIDTH , HIGHT, "FDF" );
-	fdf->img_ptr = mlx_new_image(fdf->mlx_ptr, WIDTH, HIGHT);
-	fdf->map = (int*)mlx_get_data_addr(fdf->img_ptr, &g, &fdf->size_line, &fdf->endian);
+	if (!(fdf->mlx_ptr = mlx_init()))
+		error("mlx = NULL");
+	if (!(fdf->win_ptr = mlx_new_window(fdf->mlx_ptr, WIDTH,
+			HIGHT, "FDF")))
+		error("windows = NULL");
+	if (!(fdf->img_ptr = mlx_new_image(fdf->mlx_ptr, WIDTH, HIGHT)))
+		error("image = NULL");
+	if (!(fdf->map = (int*)mlx_get_data_addr(fdf->img_ptr, &g,
+			&fdf->size_line, &fdf->endian)))
+		error("data_addr = NULL");
 	fdf->scale = 25;
-	//			draw[i][j].point.x = (x + y) * cos(0.46373398) + 500;
-//			draw[i][j].point.y = -draw[i][j].h * fdf->scale + (x - y) * sin(0.46373398) + 500;
-//	fdf->y_rotation = -0.615472907;
-//	fdf->x_rotation	= -0.785398;
 }
 
-int main(int a, char **b)
+int		main(int a, char **b)
 {
 	int		fd;
 	t_fdf	fdf;
 
 	if (a != 2)
-	{
-		ft_printf("Usage : file not found\n");
-		exit(1);
-	}
+		error("Usage : enter an argument");
 	fd = ft_read_file(b[1]);
-	if (fd == -1)
-	{
-		ft_printf("block file\n");
-		exit(1);
-	}
 	ft_bzero(&fdf, sizeof(fdf));
 	read_file(fd, &fdf);
 	inc_mlx(&fdf);
 	ft_camera(&fdf);
 	mlx_loop(fdf.mlx_ptr);
-
-	return 0;
+	close(fd);
+	return (0);
 }
