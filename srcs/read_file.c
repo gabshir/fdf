@@ -6,7 +6,7 @@
 /*   By: gabshire <gabshire@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/23 12:20:14 by gabshire          #+#    #+#             */
-/*   Updated: 2019/09/23 20:15:21 by gabshire         ###   ########.fr       */
+/*   Updated: 2019/09/24 16:10:43 by gabshire         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,18 +60,17 @@ static t_draw	*one_str(char *str, int i, t_fdf *fdf)
 		}
 		*copy && *copy == ',' ? error("not correct argument") : 0;
 		skip_spaces(&copy);
-		if (*copy)
-			drow[j].color = drow[j].color ? drow[j].color : 0x00FFFF;
+		color_grad(copy, &drow[j]);
 		++j;
 	}
-	fdf->len == j || fdf->len == 0 ? fdf->len = j : error("Incorrect len");
+	fdf->hight == j || fdf->hight == 0 ? fdf->hight = j : error("Wrong len");
 	return (drow);
 }
 
 static t_draw	**fill_matrix(char **map, t_fdf *fdf)
 {
 	unsigned	len;
-	unsigned	i;
+	int			i;
 	t_draw		**drow;
 
 	len = 0;
@@ -83,13 +82,14 @@ static t_draw	**fill_matrix(char **map, t_fdf *fdf)
 	drow[len] = NULL;
 	while (map[i])
 	{
-		drow[i] = one_str(map[i], (int)i + 1, fdf);
+		drow[i] = one_str(map[i], i + 1, fdf);
 		free(map[i]);
 		map[i] = NULL;
 		++i;
 	}
 	drow[i] = NULL;
 	free(map);
+	fdf->width = i;
 	map = NULL;
 	return (drow);
 }

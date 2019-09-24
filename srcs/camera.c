@@ -6,7 +6,7 @@
 /*   By: gabshire <gabshire@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/23 12:20:03 by gabshire          #+#    #+#             */
-/*   Updated: 2019/09/23 13:04:35 by gabshire         ###   ########.fr       */
+/*   Updated: 2019/09/24 15:49:17 by gabshire         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,14 +71,14 @@ static int		hook(int key, t_fdf *fdf)
 		rotation(key, fdf);
 	else if (key == 69)
 		fdf->scale += 1;
-	else if (key == 78)
+	else if (key == 78 && fdf->scale)
 		fdf->scale -= 1;
 	else if (key == 124 || key == 123 || key == 126 || key == 125)
 		bias(key, fdf);
 	else if (key == 83)
-		fdf->proektion = 1;
+		fdf->proektion = fdf->proektion == 1 ? 0 : 1;
 	else if (key == 84)
-		fdf->proektion = 2;
+		fdf->proektion = fdf->proektion == 2 ? 0 : 2;
 	ft_drow(fdf);
 	return (0);
 }

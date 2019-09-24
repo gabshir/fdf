@@ -1,8 +1,20 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: gabshire <gabshire@student.42.fr>          +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2019/09/24 16:05:33 by gabshire          #+#    #+#              #
+#    Updated: 2019/09/24 16:05:34 by gabshire         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
 NAME	= fdf
 
 # src / obj files
 SRC		= camera.c main.c	over.c	read_file.c \
-		draw.c	mini_atoi_base.c	proektion.c \
+		draw.c	mini_atoi_base.c	proektion.c  gradient.c\
 
 OBJ		= $(addprefix $(OBJDIR),$(SRC:.c=.o))
 

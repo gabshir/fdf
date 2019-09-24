@@ -6,7 +6,7 @@
 /*   By: gabshire <gabshire@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/23 12:19:14 by gabshire          #+#    #+#             */
-/*   Updated: 2019/09/23 20:15:21 by gabshire         ###   ########.fr       */
+/*   Updated: 2019/09/24 16:11:26 by gabshire         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,10 @@
 # include "../libft/includes/ft_printf.h"
 # include "/usr/local/include/mlx.h"
 # include <math.h>
-
 # define WIDTH 1920
 # define HIGHT 1080
 # define MIN_INT -2147483648
-# define MAX_INT 2147483547
+# define MAX_INT 2147483647
 
 typedef struct	s_draw
 {
@@ -56,7 +55,8 @@ typedef struct	s_fdf
 	double		z_rotation;
 	int			x;
 	int			y;
-	int			len;
+	int			hight;
+	int			width;
 	int			proektion;
 }				t_fdf;
 
@@ -67,5 +67,8 @@ void			ft_drow(t_fdf *fdf);
 void			ft_camera(t_fdf *fdf);
 void			skip_spaces(char **str);
 t_draw			operation(t_draw drow, t_fdf *fdf);
+void			color_grad(char *copy, t_draw *drow);
+int				get_color(t_draw current, t_draw start, t_draw end,
+t_line delta);
 
 #endif
