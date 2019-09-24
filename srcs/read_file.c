@@ -6,7 +6,7 @@
 /*   By: gabshire <gabshire@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/23 12:20:14 by gabshire          #+#    #+#             */
-/*   Updated: 2019/09/24 16:10:43 by gabshire         ###   ########.fr       */
+/*   Updated: 2019/09/24 16:43:11 by gabshire         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -109,6 +109,8 @@ void			read_file(int fd, t_fdf *fdf)
 	}
 	if (!(map = ft_strsplit(file, '\n')))
 		error("error malloc");
+	free(file);
+	file = NULL;
 	!map[0] ? error("empty file") : 0;
 	fdf->draw = fill_matrix(map, fdf);
 }
